@@ -92,7 +92,7 @@ public class DetailActivity extends AppCompatActivity {
                 alsoKnownTv.append(" ,"+sandwich.getAlsoKnownAs().get(i));
             }
         }else {
-            alsoKwonAsLinearLayout.setVisibility(View.INVISIBLE);
+            alsoKwonAsLinearLayout.setVisibility(View.GONE);
         }
 
 
@@ -103,7 +103,7 @@ public class DetailActivity extends AppCompatActivity {
                 ingredientsTv.append(" ," + sandwich.getIngredients().get(i));
             }
         } else {
-            ingredientsLayout.setVisibility(View.INVISIBLE);
+            ingredientsLayout.setVisibility(View.GONE);
         }
 
         if (sandwich.getDescription() != null && !sandwich.getDescription().isEmpty()) {
@@ -116,7 +116,7 @@ public class DetailActivity extends AppCompatActivity {
             originTv.setText(sandwich.getPlaceOfOrigin());
 
         } else {
-            placeOfOriginLayout.setVisibility(View.INVISIBLE);
+            placeOfOriginLayout.setVisibility(View.GONE);
         }
 
 
