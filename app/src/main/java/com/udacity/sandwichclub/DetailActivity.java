@@ -61,6 +61,8 @@ public class DetailActivity extends AppCompatActivity {
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.drawable.error)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
@@ -88,7 +90,7 @@ public class DetailActivity extends AppCompatActivity {
         if (sandwich.getAlsoKnownAs()!=null && sandwich.getAlsoKnownAs().size()>0){
             alsoKnownTv.append(sandwich.getAlsoKnownAs().get(0));
 
-            for (int i = 0; i < sandwich.getAlsoKnownAs().size(); i++) {
+            for (int i = 1; i < sandwich.getAlsoKnownAs().size(); i++) {
                 alsoKnownTv.append(" ,"+sandwich.getAlsoKnownAs().get(i));
             }
         }else {
@@ -99,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
         if (sandwich.getIngredients() != null && sandwich.getIngredients().size() > 0) {
             ingredientsTv.append(sandwich.getIngredients().get(0));
 
-            for (int i = 0; i < sandwich.getIngredients().size(); i++) {
+            for (int i = 1; i < sandwich.getIngredients().size(); i++) {
                 ingredientsTv.append(" ," + sandwich.getIngredients().get(i));
             }
         } else {
